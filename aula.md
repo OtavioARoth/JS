@@ -28,20 +28,20 @@ Apresentar os dados
 
 ## Tipos de dados:
 
-- [] Strings (texto): "" '' ``
-- [] Numbers: 2 1.4
-- [] Boolean: true, false
+- [x] Strings (texto): "" '' ``
+- [x] Numbers: 2 1.4
+- [x] Boolean: true, false
 
 # Operadores
 
-- [] Operadores de atribuição de valor: =
+- [x] Operadores de atribuição de valor: =
 - [x] Operador de contatenação: +
 
 ## Estruturas de dados:
 
 ### Arrays: 
 
-- [] Uma lista que contém qualquer tipo de dado 
+- [x] Uma lista que contém qualquer tipo de dado 
 
 ### Objetos:
 
@@ -51,6 +51,6 @@ Apresentar os dados
 
 ### Functions
 
-- [] criar, passar argumento
-- [] excutar
-- [] arrow function / named function
+- [x] criar, passar argumento
+- [x] excutar
+- [x] arrow function / named function

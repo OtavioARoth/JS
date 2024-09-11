@@ -37,6 +37,7 @@ Apresentar os dados
 - [x] Operadores de atribuição de valor: =
 - [x] Operador de contatenação: +
 - [x] Operadores de comparação == != 1<3 > 2
+- [x] spread operator ...
 
 ## Estruturas de dados:
 
@@ -46,9 +47,9 @@ Apresentar os dados
 
 ### Objetos:
 
-- [] Atributos e métodos
-- [] Criação e manipulação de objetos
-- [] Acesso a propriedades de objetos
+- [x] Atributos e métodos
+- [x] Criação e manipulação de objetos
+- [x] Acesso a propriedades de objetos
 
 ### Functions
 
@@ -62,7 +63,7 @@ Apresentar os dados
 
 # Condicionais
 
-- [] switch
+- [x] switch
 - [x] if/else
 
 ## Módulos em Node.js:

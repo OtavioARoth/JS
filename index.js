@@ -8,17 +8,19 @@ let metas = [meta] //armazena meta individual em metas
 const ListarMetas = async() => {
     const respostas = await checkbox({ //espera para a marcação
         message: "use as setas para mudar a meta e espaço para marcar e desmarcar as metas",
-        choices:[...metas] //copia tudo que está em metas 
+        choices:[...metas], //copia tudo que está em metas 
+        instructions:false,
     })
-    if(respostas.length ==0){
-        console.log("nenhuma meta selecionada")
-        return
-    }
     metas.forEach((m) => {
 
         m.checked = false // se for marcado como falso ela não altera o valor
 
     })
+    if(respostas.length ==0){
+        console.log("nenhuma meta selecionada")
+        return
+    }
+   
     respostas.forEach((resposta)  => { //para cada resposta ele faz algo
         const meta = metas.find((m) => { //ele vai pegar uma das metas e chamar de "m", se m value bate com um valor armazenado ele faz o check.
             return m.value == resposta 
@@ -39,6 +41,19 @@ const cadastrarMeta = async() => {
     )
     console.log ("meta(s) concluida(s)")
 }
+const MetasRealizadas = async() => {
+    const realizadas = metas.filter((meta) =>{//high order function sempre recebe função .filter(()=>{})
+        return meta.checked
+    })
+    if(realizadas.length == 0){
+        console.log ("não existem metas realizadsa!")
+    }
+    await select({
+        message: "Metas realizadas",
+        choices:[...realizadas]//um novo array com as informações do antigo.
+
+    })
+}
 
 const start = async () => {
 
@@ -58,6 +73,11 @@ const start = async () => {
 
             },
             {
+                name:"metas realizadas",
+                value: "realizadas",
+
+            },
+            {
                 name:"sair",
                 value:"sair"
             }
@@ -74,6 +94,9 @@ const start = async () => {
         case "listar":
             console.log("vamos listar")
                 await ListarMetas()
+            break
+        case "realizadas":
+            await MetasRealizadas()
             break
         case "sair":
             return

@@ -8,14 +8,14 @@ let metas
 const carregarMetas = async() => {
     try{
         const dados =  await fs.readFile ("metas.json", "utf-8")
-        metas = JSON.parse(dados)
+        metas = JSON.parse(dados) // transforma json para Javascript
     }
     catch (erro) {
         metas = []
     }
 }
 const salvarMetas = async() => {
-    await fs.writeFile("metas.json", JSON.stringify(metas, null,2))
+    await fs.writeFile("metas.json", JSON.stringify(metas, null,2)) // transforma javascript em JSON
 }
 
 const ListarMetas = async () => {
